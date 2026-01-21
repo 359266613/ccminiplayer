@@ -25,6 +25,12 @@ jobs:
             rm -rf "$HOME/theos/sdks"
           fi
           git clone https://github.com/theos/sdks.git $HOME/theos/sdks
+          mkdir -p "$HOME/theos/toolchain"
+
+      - name: Install iOS toolchain
+        run: |
+          curl -L https://github.com/theos/theos/releases/latest/download/iphoneos-toolchain-linux.tar.xz \
+            | tar -xJf - -C "$HOME/theos/toolchain"
 
       - name: Build package
         run: |
