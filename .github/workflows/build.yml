@@ -21,13 +21,15 @@ jobs:
       - name: Setup Theos
         run: |
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          if [ -d "$HOME/theos/sdks" ]; then
+            rm -rf "$HOME/theos/sdks"
+          fi
           git clone https://github.com/theos/sdks.git $HOME/theos/sdks
 
       - name: Build package
         env:
-          THEOS: ${{ runner.temp }}/theos
+          THEOS: ${{ env.HOME }}/theos
         run: |
-          mv $HOME/theos $THEOS
           export THEOS=$THEOS
           make package
 
