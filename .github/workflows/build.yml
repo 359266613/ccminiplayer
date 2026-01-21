@@ -27,10 +27,8 @@ jobs:
           git clone https://github.com/theos/sdks.git $HOME/theos/sdks
 
       - name: Build package
-        env:
-          THEOS: ${{ env.HOME }}/theos
         run: |
-          export THEOS=$THEOS
+          export THEOS="$HOME/theos"
           make package
 
       - name: Upload package
