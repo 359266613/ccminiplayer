@@ -3,11 +3,13 @@
 // 功能：控制中心 Now Playing 显示层替换：极简条形 + 渐变/粒子背景
 // 重点：不 remove 原生 view，只隐藏（保留原生控制链），降低崩溃风险
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import <notify.h>
+#import <math.h>
 
 #pragma mark - ===== Prefs =====
 

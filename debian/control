@@ -1,0 +1,9 @@
+Package: com.axs.ccminiplayer
+Name: CCMiniPlayer
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: iOS 16.5 Control Center mini now playing UI with gradient + particle background.
+Maintainer: AXS
+Author: AXS
+Section: Tweaks
+Version: 1.0.0
